@@ -1,0 +1,51 @@
+From 00f16bd6a1abb37119c4bbbd01d7c50848332926 Mon Sep 17 00:00:00 2001
+From: Thomas Goirand <zigo@debian.org>
+Date: Tue, 15 Sep 2015 18:30:12 -0400
+Subject: Removes privacy breach in docs
+
+ This patch removes links to external websites when generating Sphinx docs.
+ Note to the author: using google-analytics in a Sphinx doc is just horrible.
+ Please stop doing this!
+Forwarded: no
+Last-Update: 2015-04-10
+
+Patch-Name: removes-privacy-breach-in-docs.patch
+---
+ README.rst                  | 3 ---
+ docs/_templates/layout.html | 9 ---------
+ 2 files changed, 12 deletions(-)
+
+diff --git a/README.rst b/README.rst
+index da8539f..7d40e33 100644
+--- a/README.rst
++++ b/README.rst
+@@ -22,9 +22,6 @@ are `Mezzanine <http://mezzanine.jupo.org/>`_ and `ObsPy
+ Features
+ --------
+ 
+-.. image:: https://travis-ci.org/PythonCharmers/python-future.svg?branch=master
+-       :target: https://travis-ci.org/PythonCharmers/python-future
+-
+ -   ``future.builtins`` package (also available as ``builtins`` on Py2) provides
+     backports and remappings for 20 builtins with different semantics on Py3
+     versus Py2
+diff --git a/docs/_templates/layout.html b/docs/_templates/layout.html
+index c979ab2..57b385c 100644
+--- a/docs/_templates/layout.html
++++ b/docs/_templates/layout.html
+@@ -13,15 +13,6 @@
+ {% block footer %}
+ {{ super() }}
+ <div class="footer">
+-<script type="text/javascript">
+-  (function() {
+-    var ga = document.createElement('script');
+-    ga.src = ('https:' == document.location.protocol ?
+-              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+-    ga.setAttribute('async', 'true');
+-    document.documentElement.firstChild.appendChild(ga);
+-  })();
+-</script>
+ </div>
+ {% endblock %}
+ 

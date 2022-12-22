@@ -1,0 +1,25 @@
+Description: Don't run the _dummy_thread tests
+ The module is deprecated since 3.7, and removed in 3.9.
+Bug: https://github.com/PythonCharmers/python-future/issues/540
+Bug-Debian: https://bugs.debian.org/973114
+Author: Matthias Klose <doko@ubuntu.com>
+Last-Update: 2020-11-13
+
+--- a/tests/test_future/test_standard_library.py
++++ b/tests/test_future/test_standard_library.py
+@@ -422,7 +422,6 @@
+ 
+     def test_underscore_prefixed_modules(self):
+         import _thread
+-        import _dummy_thread
+         import _markupbase
+         self.assertTrue(True)
+ 
+@@ -570,7 +569,6 @@
+         import future.moves.xmlrpc.client
+         import future.moves.xmlrpc.server
+ 
+-        from future.moves import _dummy_thread
+         from future.moves import _markupbase
+         from future.moves import _thread
+ 

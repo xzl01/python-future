@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+if [ "$1" = "configure" ] ; then
+	update-alternatives --install /usr/bin/futurize futurize /usr/bin/python3-futurize 300
+	update-alternatives --install /usr/bin/pasteurize pasteurize /usr/bin/python3-pasteurize 300
+fi
+
+#DEBHELPER#
+
+exit 0

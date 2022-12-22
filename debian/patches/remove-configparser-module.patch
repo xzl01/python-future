@@ -1,0 +1,23 @@
+From 6e3c0d5f332a2f591c36d477e5c254849b7d40f5 Mon Sep 17 00:00:00 2001
+From: Vincent Bernat <bernat@debian.org>
+Date: Tue, 3 May 2016 21:51:13 +0200
+Subject: Do not ship a configparser module
+
+This module is already backported in python-configparser package.
+
+Bug-Debian: https://bugs.debian.org/822157
+Bug: https://github.com/PythonCharmers/python-future/issues/118
+
+Last-Change: Thu, 13 Sep 2018 11:27:00 +0200 (by Andreas Tille <tille@debian.org>
+             Most changes adopted upstream
+
+--- a/setup.py
++++ b/setup.py
+@@ -133,7 +133,6 @@ try:
+                           'builtins',
+                           # Catch the case that configparser is in the build folder
+                           # from a previous version of `future`:
+-                          'configparser',
+                           'copyreg',
+                           'html',
+                           'http',

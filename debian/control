@@ -1,0 +1,49 @@
+Source: python-future
+Section: python
+Priority: optional
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
+Uploaders: Vincent Bernat <bernat@debian.org>
+Build-Depends: debhelper-compat (= 13),
+               dh-python (>= 2.20160609~),
+               python3-all,
+               python3-setuptools,
+               python3-sphinx,
+Build-Depends-Indep: openssl, python3-pytest, ca-certificates
+Standards-Version: 4.5.1
+Rules-Requires-Root: no
+Vcs-Git: https://salsa.debian.org/python-team/packages/python-future.git
+Vcs-Browser: https://salsa.debian.org/python-team/packages/python-future
+Homepage: https://python-future.org
+Testsuite: autopkgtest-pkg-python
+
+Package: python3-future
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${python3:Depends}, python3-lib2to3
+Suggests: python-future-doc
+Description: Clean single-source support for Python 3 and 2 - Python 3.x
+ Future is the missing compatibility layer between Python 2 and Python 3. It
+ allows one to use a single, clean Python 3.x-compatible codebase to support
+ both Python 2 and Python 3 with minimal overhead.
+ .
+ The imports have no effect on Python 3. On Python 2, they shadow the
+ corresponding builtins, which normally have different semantics on Python 3
+ versus 2, to provide their Python 3 semantics.
+ .
+ This package contains the Python 3.x module.
+
+Package: python-future-doc
+Section: doc
+Architecture: all
+Depends: ${misc:Depends}, ${sphinxdoc:Depends}
+Multi-Arch: foreign
+Description: Clean single-source support for Python 3 and 2 - doc
+ Future is the missing compatibility layer between Python 2 and Python 3. It
+ allows one to use a single, clean Python 3.x-compatible codebase to support
+ both Python 2 and Python 3 with minimal overhead.
+ .
+ The imports have no effect on Python 3. On Python 2, they shadow the
+ corresponding builtins, which normally have different semantics on Python 3
+ versus 2, to provide their Python 3 semantics.
+ .
+ This package contains the documentation.

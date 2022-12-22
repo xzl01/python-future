@@ -1,0 +1,9 @@
+Document: python-future-doc
+Title: future Documentation
+Author: N/A
+Abstract: Sphinx documentation for future
+Section: Programming/Python
+
+Format: HTML
+Index: /usr/share/doc/python-future-doc/html/index.html
+Files: /usr/share/doc/python-future-doc/html/*

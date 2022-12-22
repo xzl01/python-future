@@ -1,0 +1,147 @@
+python-future (0.18.2-5) unstable; urgency=medium
+
+  * Team upload
+
+  [ Ondřej Nový ]
+  * d/control: Update Maintainer field with new Debian Python Team
+    contact address.
+  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout.
+
+  [ Graham Inggs ]
+  * Don't run the _dummy_thread tests, the module is deprecated since
+    3.7, and removed in 3.9 (Closes: #973114)
+  * Remove Barry Warsaw from Uploaders,
+    thanks Barry for all your work! (Closes: #970149)
+  * Add debian/clean to prevent FTBFSx2
+  * Set Rules-Requires-Root: no
+  * Bump Standards-Version to 4.5.1, no changes
+
+ -- Graham Inggs <ginggs@debian.org>  Wed, 23 Dec 2020 12:37:57 +0000
+
+python-future (0.18.2-4) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit.
+  * Update standards version to 4.5.0, no changes needed.
+  * Apply multi-arch hints.
+    + python-future-doc: Add Multi-Arch: foreign.
+
+  [ Boyuan Yang ]
+  * Set package python3-future as Multi-Arch: foreign.
+    (Closes: #961042)
+  * Bump debhelper compat to v13.
+  * debian/rules: Use dh13 syntax.
+
+ -- Boyuan Yang <byang@debian.org>  Wed, 05 Aug 2020 11:56:02 -0400
+
+python-future (0.18.2-2) unstable; urgency=medium
+
+  * Drop python2 support; Closes: #937773
+
+ -- Sandro Tosi <morph@debian.org>  Fri, 27 Mar 2020 22:39:09 -0400
+
+python-future (0.18.2-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Use debhelper-compat instead of debian/compat.
+  * Bump Standards-Version to 4.4.1.
+
+  [ Sandro Tosi ]
+  * New upstream release
+    - compatible with python 3.8; Closes: #948420
+  * debian/copyright
+    - update upstream copyright notice
+  * debian/patches
+    - refresh patches, drop Python3.7-support.patch (addressed upstream)
+  * debian/rules
+    - exclude test_pow test, currently failing; reported upstream at
+      https://github.com/PythonCharmers/python-future/issues/474
+  * Use python3 sphinx to build the documentation, and as a
+    PYBUILD_AFTER_BUILD_python3 target instead of overriding dh_sphinxdoc
+
+ -- Sandro Tosi <morph@debian.org>  Sat, 01 Feb 2020 22:10:56 -0500
+
+python-future (0.16.0-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream version
+  * Standards-Version: 4.3.0
+
+ -- Andreas Tille <tille@debian.org>  Wed, 30 Jan 2019 21:47:52 +0100
+
+python-future (0.15.2-5) unstable; urgency=medium
+
+  * Team upload.
+  * Bump required version of dh-python because test autodetection is
+    not working in older versions
+  * Bumped debhelper compat version to 11
+  * d/control: Set Vcs-* to salsa.debian.org
+  * d/copyright: Use https protocol in Format field
+  * Convert git repository from git-dpm to gbp layout
+  * Add python3-lib2to3 to depends (Closes: #896216)
+  * d/*.postinst: Prefer Python 3 version if both versions installed
+    (Closes: #870038)
+  * Add Python 3.7 support
+  * Standards version is 4.2.0 now (no changes)
+
+ -- Ondřej Nový <onovy@debian.org>  Tue, 21 Aug 2018 20:06:43 +0200
+
+python-future (0.15.2-4) unstable; urgency=medium
+
+  * d/p/0005-Fixed-bytes-unit-tests-fail-on-Python-3.5.patch:
+    Fixed FTBFS on Python 3.5 (Closes: #835243)
+
+ -- Ondřej Nový <onovy@debian.org>  Fri, 23 Sep 2016 19:38:45 +0200
+
+python-future (0.15.2-3) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Removed version from python-all build dependency
+  * Removed pre-depends on dpkg
+
+  [ Vincent Bernat ]
+  * Disable network access for Sphinx during build. Closes: #830602.
+
+ -- Vincent Bernat <bernat@debian.org>  Sun, 17 Jul 2016 07:31:47 +0200
+
+python-future (0.15.2-2) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Fixed VCS URL (https)
+
+  [ Vincent Bernat ]
+  * d/control: Bump Standards-Version.
+  * d/control: Add a Testsuite field.
+  * d/rules: Switch to pybuild. This removes dependency on the current
+    Python version, hence closes: #822097.
+  * d/copyright: Various fixes in license names and file format.
+  * Add a patch to fix some failing tests with Python 3.5.
+  * Remove configparser module and depends on python-configparser
+    instead. Closes: #822157.
+
+ -- Vincent Bernat <bernat@debian.org>  Wed, 04 May 2016 08:19:45 +0200
+
+python-future (0.15.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * d/control:
+    - Make DPMT the Maintainer and add myself to Uploaders.  (Closes: #797212)
+    - Update Vcs-Git and Vcs-Browser headers to reflect the move to DPMT.
+  * d/copyright: Fix multiple lintian warnings.
+  * d/watch: Use pypi.debian.net redirector.
+  * d/gbp.conf: Removed.
+  * d/python{,3}-future.postrm: Removed to fix lintian warnings.  This
+    duplicates functionality in the .prerm anyway, which is where lintian
+    recommends the calls should go.
+  * Converted to git-dpm as per DPMT (upcoming) standard.
+
+ -- Barry Warsaw <barry@debian.org>  Tue, 15 Sep 2015 19:24:43 -0400
+
+python-future (0.14.3-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #782250)
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 27 Mar 2015 13:22:19 +0100
