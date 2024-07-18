@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Debian Python Team <team+python@tracker.debian.org>
 Uploaders: Vincent Bernat <bernat@debian.org>
 Build-Depends: debhelper-compat (= 13),
-               dh-python (>= 2.20160609~),
+               dh-python,
                python3-all,
                python3-setuptools,
                python3-sphinx,

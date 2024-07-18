@@ -1,3 +1,11 @@
+python-future (0.18.2-6) unstable; urgency=medium
+
+  * Set upstream metadata fields: Repository, Repository-Browse.
+  * Remove constraints unnecessary since buster:
+    + Build-Depends: Drop versioned constraint on dh-python.
+
+ -- Debian Janitor <janitor@jelmer.uk>  Wed, 25 May 2022 20:40:53 +0100
+
 python-future (0.18.2-5) unstable; urgency=medium
 
   * Team upload
